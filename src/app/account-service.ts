@@ -14,4 +14,8 @@ export class AccountService {
   getAccountList() : Observable<Account[]>{
     return this.httpClient.get<Account[]>(`${this.baseURL}`);
   }
+
+  openAccount(account : Account) : Observable<Account> {
+    return this.httpClient.post<Account>(`${this.baseURL}`,account);
+  }
 }
